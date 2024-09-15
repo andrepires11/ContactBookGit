@@ -55,6 +55,9 @@ public class Main {
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
                     break;
+                case FIND_CONTACT_BY_NUMBER:
+                    lookUpContact(in, cBook);
+                    break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -148,5 +151,18 @@ public class Main {
             }
         }
         else System.out.println(BOOK_EMPTY);
+    }
+
+    private static void lookUpContact(Scanner in, ContactBook cBook) {
+        int phone_number;
+        Contact contact;
+        phone_number = in.nextInt();
+        in.nextLine();
+
+        contact = cBook.findContact(phone_number);
+        if(contact == null)
+            System.out.println(PHONENUMBER_NOT_EXIST);
+        else
+            System.out.println(contact.getName());
     }
 }
