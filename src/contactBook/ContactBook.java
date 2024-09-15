@@ -105,9 +105,9 @@ public class ContactBook {
     }
 
     public boolean samePhones() {
-        for(int i= 0; i < counter ; i++){
+        for(int i= 0; i < counter-1; i++){
             Contact c = contacts[i];
-            for( int j= i + 1; j<counter-1;j++){
+            for( int j= i + 1; j < counter; j++){
                 Contact contact = contacts[j];
                 if (c.getPhone() == contact.getPhone())
                     return true;
