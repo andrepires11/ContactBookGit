@@ -61,6 +61,9 @@ public class Main {
                 case FIND_CONTACT_BY_NUMBER:
                     lookUpContact(in, cBook);
                     break;
+                case REPEATED_PHONES:
+                    repeated_phones(cBook);
+                    break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -167,5 +170,12 @@ public class Main {
             System.out.println(PHONENUMBER_NOT_EXIST);
         else
             System.out.println(contact.getName());
+    }
+
+    private static void repeated_phones(ContactBook cBook) {
+        if(cBook.samePhones()){
+            System.out.println(SAME_PHONES);}
+        else
+            System.out.println(DIFERENT_PHONES);
     }
 }
